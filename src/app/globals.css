@@ -1,26 +1,70 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Font Family Variants */
+  --font-heading: var(--font-heading);
+  --font-primary: var(--font-primary);
+
+  /* Colors */
+  --color-primary: #191c1f;
+  --color-secondary: #5f6c72;
+  --color-brand: #1b6392;
+
+  --color-success: #fa8232;
+  --color-danger: #ebc80c;
+  --color-warning: #f3de6d;
+  --color-text-light: #ffffff;
+
+  --color-bg-light: #fafafa;
+  --color-text-primary: #191c1f;
+
+  --color-border: #e4e7e9;
+
+  /* Gradients */
+  --background-image-bage: linear-gradient(
+    90deg,
+    rgba(255, 122, 0, 1) 0%,
+    rgba(255, 184, 0, 1) 50%
+  );
+  --background-image-brand-gradient: linear-gradient(
+    90deg,
+    #0198e9 0%,
+    #01c2e9 100%
+  );
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@utility container {
+  margin: auto;
+  padding: 0 15px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-primary);
+  background-color: var(--color-bg-light);
+  color: var(--color-text-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+/* Custom Heading & Subheading Classes */
+.heading {
+  font-family: var(--font-heading);
+  @apply text-2xl font-bold text-primary;
+}
+
+.sub_heading {
+  font-family: var(--font-primary);
+  @apply text-base font-normal text-secondary;
+}
+
+a {
+  text-decoration: none;
 }
