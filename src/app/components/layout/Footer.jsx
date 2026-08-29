@@ -5,40 +5,7 @@ import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import { FiMail, FiMapPin } from 'react-icons/fi'
 
-const topCategories = [
-  { name: 'Computer & Laptop', href: '/category/computer-laptop' },
-  { name: 'SmartPhone', href: '/category/smartphone' },
-  { name: 'Headphone', href: '/category/headphone' },
-  { name: 'Accessories', href: '/category/accessories'},
-  { name: 'Camera & Photo', href: '/category/camera-photo' },
-  { name: 'TV & Homes', href: '/category/tv-homes' },
-  {name:"All cetagoris",href:"/category", highlight: true }
-]
-
-const quickLinks = [
-  { name: 'Shop Product', href: '/shop' },
-  { name: 'Shoping Cart', href: '/cart' },
-  { name: 'Wishlist', href: '/wishlist' },
-  { name: 'Compare', href: '/compare' },
-  { name: 'Track Order', href: '/track-order' },
-  { name: 'Customer Help', href: '/help' },
-  { name: 'About Us', href: '/about' },
-]
-
-const popularTags = [
-  'Game', 'iPhone', 'TV', 'Asus Laptops',
-  'Macbook', 'SSD', 'Graphics Card',
-  'Power Bank', 'Smart TV', 'Speaker',
-  'Tablet', 'Microwave', 'Samsung',
-]
-
-const brandLogos = [
-  { name: 'Google', src: '/google.png' },
-  { name: 'Amazon', src: '/amazon.png' },
-  { name: 'Philips', src: '/philips.png' },
-  { name: 'Toshiba', src: '/sam.png' },
-  { name: 'Samsung', src: '/tosb.png' },
-]
+import {brandLogos,topCategories,quickLinks,popularTags} from '@/lib/footerdata'
 
 const Footer = () => {
   const [email, setEmail] = useState('')
@@ -55,7 +22,7 @@ const Footer = () => {
     setStatus({ type: 'loading', message: '' })
 
     try {
-      // TODO: API route এর সাথে যুক্ত করুন
+      // TODO: API route 
       setStatus({ type: 'success', message: 'Subscribed successfully' })
       setEmail('')
     } catch {
@@ -94,7 +61,7 @@ const Footer = () => {
             <button
               type='submit'
               disabled={status?.type === 'loading'}
-              className='bg-success hover:opacity-90 text-text-light font-semibold text-base sm:text-sm px-4 sm:px-6 py-3 flex items-center justify-center gap-2 transition-opacity disabled:opacity-60 shrink-0 whitespace-nowrap'
+              className='bg-success hover:opacity-90 cursor-pointer text-text-light font-semibold text-base sm:text-sm px-4 sm:px-6 py-3 flex items-center justify-center gap-2 transition-opacity disabled:opacity-60 shrink-0 whitespace-nowrap'
             >
               {status?.type === 'loading' ? 'Subscribing...' : 'Subscribe'}
               <ArrowRight className='w-4 h-4 shrink-0' />
@@ -194,24 +161,24 @@ const Footer = () => {
             <h3 className='text-text-light text-base sm:text-sm font-semibold tracking-wide mb-4'>DOWNLOAD APP</h3>
             <div className='flex flex-col gap-3'>
               <a
-                href="https://play.google.com"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className='flex items-center gap-3 border border-border/20 rounded-sm px-3 py-2 hover:border-text-light/40 transition-colors min-w-0'
               >
-                <Image src="/icons/google-play.svg" alt="" width={20} height={20} aria-hidden="true" className='shrink-0' />
+                <Image src="./file.svg" alt="" width={20} height={20} aria-hidden="true" className='shrink-0' />
                 <span className='text-left min-w-0'>
                   <span className='block text-secondary text-[10px] leading-none'>Get it now</span>
                   <span className='block text-text-light text-base sm:text-sm font-medium leading-tight mt-1 truncate'>Google Play</span>
                 </span>
               </a>
               <a
-                href="https://www.apple.com/app-store/"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className='flex items-center gap-3 border border-border/20 rounded-sm px-3 py-2 hover:border-text-light/40 transition-colors min-w-0'
               >
-                <Image src="/icons/app-store.svg" alt="" width={20} height={20} aria-hidden="true" className='shrink-0' />
+                <Image src="./file.svg" alt="" width={20} height={20} aria-hidden="true" className='shrink-0' />
                 <span className='text-left min-w-0'>
                   <span className='block text-secondary text-[10px] leading-none'>Get it now</span>
                   <span className='block text-text-light text-base sm:text-sm font-medium leading-tight mt-1 truncate'>App Store</span>

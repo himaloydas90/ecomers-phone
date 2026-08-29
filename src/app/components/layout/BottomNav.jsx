@@ -44,11 +44,11 @@ const BottomNav = () => {
 
   return (
     <nav
-      className={`container fixed bottom-0 left-0 right-0 z-50 sm:hidden bg-text-light border-t border-border/50 px-2 pt-2 pb-1 transition-transform duration-300 ${
+      className={` fixed w-full bottom-0 left-0 right-0 z-50 md:hidden bg-text-light border-t border-border/50 px-2 pt-2 pb-1 transition-transform duration-300 ${
         visible ? 'translate-y-0' : 'translate-y-full'
       }`}
     >
-      <div className='relative flex items-center justify-around'>
+      <div className='relative flex items-center justify-around container'>
         
         {navItems.map(({ href, icon: Icon, label }) => (
           <Link

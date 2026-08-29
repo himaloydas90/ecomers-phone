@@ -141,9 +141,6 @@ const Navbar = () => {
 
     {/* Icons - hidden on small devices */}
     <div className='hidden sm:flex gap-3 sm:gap-6 text-text-light shrink-0 text-lg sm:text-xl'>
-      <Link href="/compare" aria-label="Compare" className="hover:opacity-80 transition-opacity">
-        <MdCompareArrows />
-      </Link>
       <Link href="/cart" aria-label="Cart" className="hover:opacity-80 transition-opacity">
         <FiShoppingCart />
       </Link>

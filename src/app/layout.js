@@ -1,8 +1,9 @@
 import { Playfair_Display, Public_Sans } from "next/font/google";
 import "./globals.css";
-import BottomNav from "./components/layout/BottomNav";
 import Footer from "./components/layout/Footer";
 import Navbar from "./components/layout/Navbar";
+import CategoryNavBar from "./components/layout/CategoryNavBar";
+import BottomNav from "./components/layout/BottomNav";
 
 const headingFont = Playfair_Display({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-full flex flex-col">
         <Navbar/>
+        <CategoryNavBar/>
         {children}
         <Footer/>
         <BottomNav/>
