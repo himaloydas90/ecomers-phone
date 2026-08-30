@@ -1,0 +1,67 @@
+import Link from 'next/link';
+import { ArrowRight, ShoppingBag, Sparkles } from 'lucide-react';
+
+export default function HeroBanner() {
+  return (
+    <section className="relative overflow-hidden bg-stone-900 text-stone-100 py-20 px-6 sm:px-12 lg:px-20 rounded-3xl mx-4 my-6 shadow-2xl">
+      {/* Decorative Gradient Background Elements */}
+      <div className="absolute -top-24 -left-24 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-orange-600/20 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center">
+        
+        {/* Top Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-stone-800 border border-stone-700 text-amber-400 text-sm font-medium mb-6 animate-pulse">
+          <Sparkles className="w-4 h-4" />
+          <span>নতুন কালেকশন এসেছে</span>
+        </div>
+
+        {/* Headline */}
+        <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight mb-6 font-serif">
+          আপনার স্টাইলকে নতুন উচ্চতায় নিয়ে যান
+        </h1>
+
+        {/* Subtitle */}
+        <p className="text-lg sm:text-xl text-stone-300 max-w-2xl mb-8 leading-relaxed">
+          প্রিমিয়াম কোয়ালিটির সব লেটেস্ট ট্রেন্ডি প্রোডাক্ট পাচ্ছেন এখন সেরা অফারে। আজই ভিজিট করুন এবং উপভোগ করুন ২০% পর্যন্ত ডিসকাউন্ট।
+        </p>
+
+        {/* Call to Action Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 w-full justify-center sm:w-auto">
+          <Link
+            href="/shop"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-amber-500 text-stone-950 font-semibold hover:bg-amber-400 transition-all duration-300 shadow-lg hover:shadow-amber-500/25 hover:-translate-y-0.5"
+          >
+            <ShoppingBag className="w-5 h-5" />
+            শপিং করুন
+            <ArrowRight className="w-5 h-5" />
+          </Link>
+
+          <Link
+            href="/categories"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-stone-800 text-stone-200 font-semibold border border-stone-700 hover:bg-stone-700 transition-all duration-300 hover:-translate-y-0.5"
+          >
+            ক্যাটাগরি দেখুন
+          </Link>
+        </div>
+
+        {/* Key Highlights */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-12 pt-8 border-t border-stone-800 w-full text-stone-400 text-sm">
+          <div>
+            <span className="block text-xl font-bold text-stone-100">১০০% আসল</span>
+            গ্যারান্টিযুক্ত পণ্য
+          </div>
+          <div>
+            <span className="block text-xl font-bold text-stone-100">দ্রুত ডেলিভারি</span>
+            সারাদেশে ক্যাশ অন ডেলিভারি
+          </div>
+          <div className="col-span-2 md:col-span-1">
+            <span className="block text-xl font-bold text-stone-100">২৪/৭ সাপোর্ট</span>
+            যেকোনো প্রয়োজনে পাশে আছি
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+}
